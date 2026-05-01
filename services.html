@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%233b1d2a'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Arial' font-size='34' font-weight='700' fill='%23fff3e4'%3EB%3C/text%3E%3C/svg%3E" />
+  <title>Services | Brotherhood Unisex Salon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:["Inter","sans-serif"]},colors:{ink:"#2a1510",soft:"#fff3e4",muted:"#7c4a3a",gold:"#c05621",navy:"#3b1d2a"}}}};</script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-soft font-inter text-ink">
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="index.html" class="flex items-center gap-3"><span data-salon-logo class="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-gold to-navy text-lg font-black text-white">B</span><span><span class="block text-base font-black" data-salon="short-name">Brotherhood</span><span class="block text-xs font-bold uppercase tracking-[0.22em] text-gold">Unisex Salon</span></span></a>
+      <button id="menuButton" class="rounded-md border border-slate-300 px-3 py-2 text-sm font-bold md:hidden" aria-label="Open menu">Menu</button>
+      <div id="navLinks" class="hidden absolute left-0 right-0 top-[97px] border-b border-slate-200 bg-white px-5 py-4 shadow-sm md:static md:flex md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+        <div class="flex flex-col gap-4 text-sm font-bold md:flex-row md:items-center md:gap-6">
+          <a class="hover:text-gold" href="index.html">Home</a><a class="hover:text-gold" href="about.html">About Us</a><a class="text-gold" href="services.html">Services</a><a class="hover:text-gold" href="gallery.html">Gallery</a><a class="rounded-md bg-navy px-5 py-2.5 text-white hover:bg-ink" href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="bg-gradient-to-br from-[#fff3e4] via-[#ffe0bf] to-[#f8b58a]">
+      <div class="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="text-sm font-black uppercase tracking-[0.24em] text-gold">Services</p>
+          <h1 class="mt-4 text-4xl font-black tracking-normal sm:text-5xl">Services and prices in one clean place.</h1>
+          <p class="mt-5 text-lg leading-8 text-muted">Explore hair, grooming, skin, treatment, and makeup services with clear discounted prices.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+      <div id="serviceFilters" class="mb-10 flex flex-wrap gap-3"></div>
+      <div id="servicesGrid" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-3 lg:px-8">
+      <div><p class="text-lg font-black" data-salon="name">Brotherhood Unisex Salon</p><p class="mt-3 text-sm leading-6 text-muted" data-salon="tagline">Premium grooming, hair, skin, and makeup studio in Darbhanga.</p></div>
+      <div><p class="font-bold">Contact</p><p class="mt-3 text-sm text-muted" data-salon="phone">098761 52436</p><p class="mt-2 text-sm text-muted" data-salon="address">Madarpur road, Banker's Colony, Donar, Darbhanga</p></div>
+      <div><p class="font-bold">Hours</p><p class="mt-3 text-sm text-muted" data-salon="hours">10 AM - 9 PM Daily</p></div>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="services-config.js"></script>
+  <script>
+    const formatter = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 });
+    const services = typeof salonServices === "undefined" ? [] : salonServices;
+    const categories = ["All", ...new Set(services.map((service) => service.category))];
+    let selectedCategory = "All";
+
+    function renderFilters() {
+      document.getElementById("serviceFilters").innerHTML = categories.map((category) => `
+        <button class="${category === selectedCategory ? "bg-ink text-white" : "border border-orange-200 bg-white text-ink"} rounded-full px-5 py-2 text-sm font-black" data-category="${category}">
+          ${category}
+        </button>
+      `).join("");
+
+      document.querySelectorAll("[data-category]").forEach((button) => {
+        button.addEventListener("click", () => {
+          selectedCategory = button.dataset.category;
+          renderFilters();
+          renderServices();
+        });
+      });
+    }
+
+    function renderServices() {
+      const filtered = selectedCategory === "All" ? services : services.filter((service) => service.category === selectedCategory);
+      const grid = document.getElementById("servicesGrid");
+      if (!filtered.length) {
+        grid.innerHTML = `<div class="rounded-md border border-orange-200 bg-white p-7 text-muted md:col-span-2 lg:col-span-3">Services will appear here after they are added correctly.</div>`;
+        return;
+      }
+      grid.innerHTML = filtered.map((service, index) => `
+        <article class="rounded-md border border-slate-200 bg-white p-7 shadow-sm">
+          <p class="text-xs font-black uppercase tracking-[0.2em] text-gold">${service.category}</p>
+          <h2 class="mt-4 text-xl font-black">${service.name}</h2>
+          <p class="mt-3 min-h-[84px] leading-7 text-muted">${service.description}</p>
+          <div class="mt-6 flex items-end justify-between border-t border-slate-200 pt-5">
+            <div>
+              <p class="text-sm font-bold text-muted line-through">${formatter.format(service.originalPrice)}</p>
+              <p class="mt-1 text-2xl font-black text-navy">${formatter.format(service.discountedPrice)}</p>
+            </div>
+            <a href="contact.html" class="rounded-md border border-gold px-4 py-2 text-xs font-black uppercase tracking-wide text-gold hover:bg-gold hover:text-white">Enquire</a>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    renderFilters();
+    renderServices();
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

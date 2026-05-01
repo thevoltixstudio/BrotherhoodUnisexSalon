@@ -1,0 +1,133 @@
+:root {
+  --ink: #2a1510;
+  --wine: #3b1d2a;
+  --copper: #c05621;
+  --cream: #fff3e4;
+  --paper: #fffaf5;
+  --muted: #7c4a3a;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(192, 86, 33, 0.16), transparent 34rem),
+    linear-gradient(180deg, var(--cream), #ffffff 46rem);
+}
+
+header {
+  box-shadow: 0 12px 34px rgba(42, 21, 16, 0.08);
+}
+
+header a,
+button,
+form button,
+.premium-link {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+header a:hover,
+button:hover,
+form button:hover,
+a.rounded-md:hover,
+a.rounded-full:hover {
+  transform: translateY(-2px);
+}
+
+a.rounded-md:hover,
+button:hover,
+form button:hover {
+  box-shadow: 0 16px 30px rgba(59, 29, 42, 0.18);
+}
+
+article,
+figure,
+form,
+.shadow-sm,
+.shadow-xl {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+article:hover,
+figure:hover {
+  transform: translateY(-5px);
+  border-color: rgba(192, 86, 33, 0.48);
+  box-shadow: 0 24px 50px rgba(59, 29, 42, 0.13);
+}
+
+input,
+select,
+textarea {
+  background: #fffdf9;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 4px rgba(192, 86, 33, 0.14);
+}
+
+[data-aos] {
+  opacity: 1;
+  transform: none;
+}
+
+.premium-section {
+  background: linear-gradient(135deg, #fff4e7, #ffd5ad 58%, #f2a06f);
+}
+
+.premium-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.brand-logo-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 999px;
+  object-fit: contain;
+  padding: 4px;
+  background: #fffaf5;
+}
+
+.hero-slideshow {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(135deg, rgba(59, 29, 42, 0.12), rgba(192, 86, 33, 0.18));
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 900ms ease, transform 6200ms ease;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-slideshow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, transparent 58%, rgba(42, 21, 16, 0.2));
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto;
+    transition: none !important;
+  }
+}

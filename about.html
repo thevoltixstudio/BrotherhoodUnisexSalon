@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%233b1d2a'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Arial' font-size='34' font-weight='700' fill='%23fff3e4'%3EB%3C/text%3E%3C/svg%3E" />
+  <title>About Us | Brotherhood Unisex Salon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:["Inter","sans-serif"]},colors:{ink:"#2a1510",soft:"#fff3e4",muted:"#7c4a3a",gold:"#c05621",navy:"#3b1d2a"}}}};</script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-soft font-inter text-ink">
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="index.html" class="flex items-center gap-3"><span data-salon-logo class="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-gold to-navy text-lg font-black text-white">B</span><span><span class="block text-base font-black" data-salon="short-name">Brotherhood</span><span class="block text-xs font-bold uppercase tracking-[0.22em] text-gold">Unisex Salon</span></span></a>
+      <button id="menuButton" class="rounded-md border border-slate-300 px-3 py-2 text-sm font-bold md:hidden" aria-label="Open menu">Menu</button>
+      <div id="navLinks" class="hidden absolute left-0 right-0 top-[97px] border-b border-slate-200 bg-white px-5 py-4 shadow-sm md:static md:flex md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+        <div class="flex flex-col gap-4 text-sm font-bold md:flex-row md:items-center md:gap-6">
+          <a class="hover:text-gold" href="index.html">Home</a><a class="text-gold" href="about.html">About Us</a><a class="hover:text-gold" href="services.html">Services</a><a class="hover:text-gold" href="gallery.html">Gallery</a><a class="rounded-md bg-navy px-5 py-2.5 text-white hover:bg-ink" href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="bg-gradient-to-br from-[#fff3e4] via-[#ffe0bf] to-[#f8b58a]">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.24em] text-gold">About Us</p>
+          <h1 class="mt-4 text-4xl font-black tracking-normal sm:text-5xl" data-salon="name">Brotherhood Unisex Salon</h1>
+          <p class="mt-6 text-lg leading-8 text-muted">We are a unisex salon focused on sharp grooming, clean hair work, skin care, and occasion-ready styling. The goal is simple: every client should feel comfortable, respected, and confident with the final look.</p>
+        </div>
+        <img class="aspect-[4/3] w-full rounded-md object-cover shadow-xl" loading="lazy" decoding="async" src="/images/photo3.jpg" alt="Professional salon tools and mirror" />
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-3">
+        <article class="rounded-md border border-slate-200 p-7">
+          <p class="text-sm font-black uppercase tracking-[0.18em] text-gold">Our Standard</p>
+          <h2 class="mt-4 text-xl font-black">Clean service</h2>
+          <p class="mt-3 leading-7 text-muted">We keep the service flow simple, hygienic, and attentive from consultation to final finish.</p>
+        </article>
+        <article class="rounded-md border border-slate-200 p-7">
+          <p class="text-sm font-black uppercase tracking-[0.18em] text-gold">Our Style</p>
+          <h2 class="mt-4 text-xl font-black">Modern finish</h2>
+          <p class="mt-3 leading-7 text-muted">Hair, grooming, and makeup services are shaped around the client, not a one-size-fits-all look.</p>
+        </article>
+        <article class="rounded-md border border-slate-200 p-7">
+          <p class="text-sm font-black uppercase tracking-[0.18em] text-gold">Our Promise</p>
+          <h2 class="mt-4 text-xl font-black">Clear services</h2>
+          <p class="mt-3 leading-7 text-muted">Services and prices are visible online, and updates are controlled from one simple services file.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-3 lg:px-8">
+      <div><p class="text-lg font-black" data-salon="name">Brotherhood Unisex Salon</p><p class="mt-3 text-sm leading-6 text-muted" data-salon="tagline">Premium grooming, hair, skin, and makeup studio in Darbhanga.</p></div>
+      <div><p class="font-bold">Contact</p><p class="mt-3 text-sm text-muted" data-salon="phone">098761 52436</p><p class="mt-2 text-sm text-muted" data-salon="address">Madarpur road, Banker's Colony, Donar, Darbhanga</p></div>
+      <div><p class="font-bold">Hours</p><p class="mt-3 text-sm text-muted" data-salon="hours">10 AM - 9 PM Daily</p></div>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

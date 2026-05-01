@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%233b1d2a'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Arial' font-size='34' font-weight='700' fill='%23fff3e4'%3EB%3C/text%3E%3C/svg%3E" />
+  <title>Contact Us | Brotherhood Unisex Salon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:["Inter","sans-serif"]},colors:{ink:"#2a1510",soft:"#fff3e4",muted:"#7c4a3a",gold:"#c05621",navy:"#3b1d2a"}}}};</script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-soft font-inter text-ink">
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="index.html" class="flex items-center gap-3"><span data-salon-logo class="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-gold to-navy text-lg font-black text-white">B</span><span><span class="block text-base font-black" data-salon="short-name">Brotherhood</span><span class="block text-xs font-bold uppercase tracking-[0.22em] text-gold">Unisex Salon</span></span></a>
+      <button id="menuButton" class="rounded-md border border-slate-300 px-3 py-2 text-sm font-bold md:hidden" aria-label="Open menu">Menu</button>
+      <div id="navLinks" class="hidden absolute left-0 right-0 top-[97px] border-b border-slate-200 bg-white px-5 py-4 shadow-sm md:static md:flex md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+        <div class="flex flex-col gap-4 text-sm font-bold md:flex-row md:items-center md:gap-6">
+          <a class="hover:text-gold" href="index.html">Home</a><a class="hover:text-gold" href="about.html">About Us</a><a class="hover:text-gold" href="services.html">Services</a><a class="hover:text-gold" href="gallery.html">Gallery</a><a class="rounded-md bg-navy px-5 py-2.5 text-white hover:bg-ink" href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="bg-gradient-to-br from-[#fff3e4] via-[#ffe0bf] to-[#f8b58a]">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:px-8">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.24em] text-gold">Contact Us</p>
+          <h1 class="mt-4 text-4xl font-black tracking-normal sm:text-5xl">Book an enquiry with the salon.</h1>
+          <p class="mt-5 text-lg leading-8 text-muted">Send your enquiry, call directly, or message us on WhatsApp for quick appointment help.</p>
+
+          <div class="mt-10 grid gap-4">
+            <a data-salon-phone-link href="tel:+919876152436" class="rounded-md border border-slate-200 bg-white p-5 shadow-sm hover:border-gold">
+              <p class="text-xs font-black uppercase tracking-[0.2em] text-gold">Phone</p>
+              <p class="mt-2 text-xl font-black" data-salon="phone">098761 52436</p>
+            </a>
+            <a data-salon-map-link href="#" target="_blank" rel="noopener" class="rounded-md border border-slate-200 bg-white p-5 shadow-sm hover:border-gold">
+              <p class="text-xs font-black uppercase tracking-[0.2em] text-gold">Address</p>
+              <p class="mt-2 text-xl font-black" data-salon="address">Madarpur road, Banker's Colony, Donar, Darbhanga</p>
+            </a>
+            <div class="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+              <p class="text-xs font-black uppercase tracking-[0.2em] text-gold">Hours</p>
+              <p class="mt-2 text-xl font-black" data-salon="hours">10 AM - 9 PM Daily</p>
+            </div>
+            <a data-salon-email-link href="mailto:durgeshjha452@gmail.com" class="rounded-md border border-slate-200 bg-white p-5 shadow-sm hover:border-gold">
+              <p class="text-xs font-black uppercase tracking-[0.2em] text-gold">Email</p>
+              <p class="mt-2 text-xl font-black" data-salon="email">durgeshjha452@gmail.com</p>
+            </a>
+          </div>
+        </div>
+
+        <form data-enquiry-form action="https://formsubmit.co/durgeshjha452@gmail.com" method="POST" class="rounded-md border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
+          <input type="hidden" name="_subject" value="New enquiry from Brotherhood Unisex Salon website" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+
+          <div class="grid gap-5">
+            <div>
+              <label for="name" class="mb-2 block text-sm font-black">Name</label>
+              <input id="name" name="name" type="text" required class="w-full rounded-md border border-slate-300 px-4 py-3 outline-none transition focus:border-gold focus:ring-2 focus:ring-amber-100" placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="phone" class="mb-2 block text-sm font-black">Phone</label>
+              <input id="phone" name="phone" type="tel" required class="w-full rounded-md border border-slate-300 px-4 py-3 outline-none transition focus:border-gold focus:ring-2 focus:ring-amber-100" placeholder="Your phone number" />
+            </div>
+            <div>
+              <label for="service" class="mb-2 block text-sm font-black">Service Interest</label>
+              <select id="service" name="service_interest" required class="w-full rounded-md border border-slate-300 px-4 py-3 outline-none transition focus:border-gold focus:ring-2 focus:ring-amber-100">
+                <option value="">Select a service</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="mb-2 block text-sm font-black">Message</label>
+              <textarea id="message" name="message" rows="6" class="w-full resize-none rounded-md border border-slate-300 px-4 py-3 outline-none transition focus:border-gold focus:ring-2 focus:ring-amber-100" placeholder="Preferred date, time, or service details"></textarea>
+            </div>
+            <button type="submit" class="rounded-md bg-ink px-7 py-3.5 text-sm font-black text-white transition hover:bg-navy">Send Enquiry</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-3 lg:px-8">
+      <div><p class="text-lg font-black" data-salon="name">Brotherhood Unisex Salon</p><p class="mt-3 text-sm leading-6 text-muted" data-salon="tagline">Premium grooming, hair, skin, and makeup studio in Darbhanga.</p></div>
+      <div><p class="font-bold">Contact</p><p class="mt-3 text-sm text-muted" data-salon="phone">098761 52436</p><p class="mt-2 text-sm text-muted" data-salon="address">Madarpur road, Banker's Colony, Donar, Darbhanga</p></div>
+      <div><p class="font-bold">Hours</p><p class="mt-3 text-sm text-muted" data-salon="hours">10 AM - 9 PM Daily</p></div>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="services-config.js"></script>
+  <script>
+    const serviceSelect = document.getElementById("service");
+    const services = typeof salonServices === "undefined" ? [] : salonServices;
+    services.forEach((service) => {
+      const option = document.createElement("option");
+      option.value = service.name;
+      option.textContent = service.name;
+      serviceSelect.appendChild(option);
+    });
+    const otherOption = document.createElement("option");
+    otherOption.value = "Other";
+    otherOption.textContent = "Other";
+    serviceSelect.appendChild(otherOption);
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

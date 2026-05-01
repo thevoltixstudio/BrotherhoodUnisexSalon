@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%233b1d2a'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Arial' font-size='34' font-weight='700' fill='%23fff3e4'%3EB%3C/text%3E%3C/svg%3E" />
+  <title>Brotherhood Unisex Salon | Darbhanga</title>
+  <meta name="description" content="Brotherhood Unisex Salon in Darbhanga for haircuts, styling, grooming, skin care, makeup, and professional salon services." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ["Inter", "sans-serif"] },
+          colors: { ink: "#2a1510", soft: "#fff3e4", muted: "#7c4a3a", gold: "#c05621", navy: "#3b1d2a" }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-soft font-inter text-ink">
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="index.html" class="flex items-center gap-3">
+        <span data-salon-logo class="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-gold to-navy text-lg font-black text-white">B</span>
+        <span>
+          <span class="block text-base font-black" data-salon="short-name">Brotherhood</span>
+          <span class="block text-xs font-bold uppercase tracking-[0.22em] text-gold">Unisex Salon</span>
+        </span>
+      </a>
+      <button id="menuButton" class="rounded-md border border-slate-300 px-3 py-2 text-sm font-bold md:hidden" aria-label="Open menu">Menu</button>
+      <div id="navLinks" class="hidden absolute left-0 right-0 top-[97px] border-b border-slate-200 bg-white px-5 py-4 shadow-sm md:static md:flex md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+        <div class="flex flex-col gap-4 text-sm font-bold md:flex-row md:items-center md:gap-6">
+          <a class="text-gold" href="index.html">Home</a>
+          <a class="hover:text-gold" href="about.html">About Us</a>
+          <a class="hover:text-gold" href="services.html">Services</a>
+          <a class="hover:text-gold" href="gallery.html">Gallery</a>
+          <a class="rounded-md bg-navy px-5 py-2.5 text-white hover:bg-ink" href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative overflow-hidden bg-gradient-to-br from-[#fff3e4] via-[#ffe0bf] to-[#f8b58a]">
+      <div class="mx-auto grid min-h-[calc(100vh-97px)] max-w-7xl gap-12 px-5 py-14 lg:grid-cols-[1fr_0.92fr] lg:items-center lg:px-8">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.28em] text-gold">Professional salon in Darbhanga</p>
+          <h1 class="mt-5 max-w-3xl text-4xl font-black leading-tight tracking-normal sm:text-5xl lg:text-6xl" data-salon="name">Brotherhood Unisex Salon</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-muted" data-salon="tagline">Premium grooming, hair, skin, and makeup studio in Darbhanga.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="services.html" class="rounded-md bg-ink px-7 py-3.5 text-center text-sm font-black text-white hover:bg-navy">View Services</a>
+            <a href="contact.html" class="rounded-md border border-slate-300 bg-white px-7 py-3.5 text-center text-sm font-black hover:border-gold hover:text-gold">Contact Us</a>
+          </div>
+          <div class="mt-10 grid gap-4 sm:grid-cols-3">
+            <div class="border-l-2 border-gold pl-4">
+              <p class="text-2xl font-black">10+</p>
+              <p class="mt-1 text-sm text-muted">Salon services</p>
+            </div>
+            <div class="border-l-2 border-gold pl-4">
+              <p class="text-2xl font-black">Daily</p>
+              <p class="mt-1 text-sm text-muted" data-salon="hours">10 AM - 9 PM Daily</p>
+            </div>
+            <div class="border-l-2 border-gold pl-4">
+              <p class="text-2xl font-black">Easy</p>
+              <p class="mt-1 text-sm text-muted">Phone enquiry</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div data-home-hero-slideshow class="hero-slideshow aspect-[4/5] w-full overflow-hidden rounded-md shadow-xl"></div>
+          <div class="absolute -bottom-6 left-5 right-5 rounded-md border border-slate-200 bg-white p-5 shadow-lg">
+            <p class="text-xs font-black uppercase tracking-[0.22em] text-gold">Visit us</p>
+            <p class="mt-2 text-base font-extrabold" data-salon="address">Madarpur road, Banker's Colony, Donar, Darbhanga</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl bg-[#fffaf5] px-5 py-24 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.24em] text-gold">Experience</p>
+          <h2 class="mt-4 text-3xl font-black tracking-normal sm:text-4xl">Clean, calm, and premium without feeling complicated.</h2>
+        </div>
+        <p class="text-lg leading-8 text-muted">Haircuts, beard grooming, skin care, hair treatments, and makeup services are presented clearly so clients can choose faster and enquire with confidence.</p>
+      </div>
+
+      <div class="mt-14 grid gap-5 md:grid-cols-3">
+        <article class="rounded-md border border-slate-200 p-7">
+          <p class="text-sm font-black uppercase tracking-[0.18em] text-gold">01</p>
+          <h3 class="mt-4 text-xl font-black">Hair & Styling</h3>
+          <p class="mt-3 leading-7 text-muted">Cuts, blow dry, styling, spa, keratin, and smoothening services.</p>
+        </article>
+        <article class="rounded-md border border-slate-200 p-7">
+          <p class="text-sm font-black uppercase tracking-[0.18em] text-gold">02</p>
+          <h3 class="mt-4 text-xl font-black">Skin & Grooming</h3>
+          <p class="mt-3 leading-7 text-muted">Facials, cleanups, detan, threading, manicure, and pedicure.</p>
+        </article>
+        <article class="rounded-md border border-slate-200 p-7">
+          <p class="text-sm font-black uppercase tracking-[0.18em] text-gold">03</p>
+          <h3 class="mt-4 text-xl font-black">Makeup</h3>
+          <p class="mt-3 leading-7 text-muted">Party and bridal makeup support for events and celebrations.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-navy via-ink to-[#6d2b1f] text-white">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:px-8">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.24em] text-gold">Need an appointment?</p>
+          <h2 class="mt-4 text-3xl font-black tracking-normal sm:text-4xl">Send your service interest and preferred time.</h2>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
+          <a href="contact.html" class="rounded-md bg-white px-7 py-3.5 text-center text-sm font-black text-ink hover:bg-slate-100">Contact Us</a>
+          <a data-salon-phone-link href="tel:+919876152436" class="rounded-md border border-white/30 px-7 py-3.5 text-center text-sm font-black text-white hover:border-gold hover:text-gold">Call- <span data-salon="phone">098761 52436</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-3 lg:px-8">
+      <div><p class="text-lg font-black" data-salon="name">Brotherhood Unisex Salon</p><p class="mt-3 text-sm leading-6 text-muted" data-salon="tagline">Premium grooming, hair, skin, and makeup studio in Darbhanga.</p></div>
+      <div><p class="font-bold">Contact</p><p class="mt-3 text-sm text-muted" data-salon="phone">098761 52436</p><p class="mt-2 text-sm text-muted" data-salon="address">Madarpur road, Banker's Colony, Donar, Darbhanga</p></div>
+      <div><p class="font-bold">Hours</p><p class="mt-3 text-sm text-muted" data-salon="hours">10 AM - 9 PM Daily</p></div>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="gallery-config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
